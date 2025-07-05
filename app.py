@@ -6,7 +6,7 @@ from functools import wraps
 from datetime import timedelta
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'supersecretkey')
+app.secret_key = os.environ.get('SECRET_KEY', 'niggatron123456')
 app.permanent_session_lifetime = timedelta(days=1)
 
 DB_CONFIG = {
