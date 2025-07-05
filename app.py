@@ -91,10 +91,6 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
-@app.before_first_request
-def before_first_request():
-    init_db()
-
 @app.route('/')
 def index():
     if 'user_id' in session:
@@ -416,4 +412,5 @@ def search():
     return jsonify(res)
 
 if __name__ == '__main__':
-    app.run()
+    init_db()  
+    app.run(host='0.0.0.0', port=3000)
